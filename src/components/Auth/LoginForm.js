@@ -56,7 +56,7 @@ const LoginForm = ({ setIsLoading, showNotification, isLoading }) => {
     >
       <div className="auth-card">
         <div className="auth-header">
-          <h2>Welcome to QwiX</h2>
+          <h2>QwiX</h2>
           <p>Connect with people worldwide</p>
         </div>
 
@@ -98,7 +98,7 @@ const LoginForm = ({ setIsLoading, showNotification, isLoading }) => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="work@email.com"
+              placeholder="example@email.com"
               required
               disabled={isLoading}
             />

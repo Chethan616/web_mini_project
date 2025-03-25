@@ -287,7 +287,12 @@ function App() {
 
       <header className="app-header">
         <div className="header-container">
-          <div className="logo-container">
+          <div className="logo-container" onClick={() => {
+            if (user) {
+              setActiveTab('discussions');
+              setViewingProfileId(null);
+            }
+          }}>
             <FiMessageSquare className="logo-icon" />
             <h1 className="logo-text">QwiX</h1>
           </div>
