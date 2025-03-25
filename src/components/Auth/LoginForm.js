@@ -159,19 +159,7 @@ const LoginForm = ({ setIsLoading, showNotification, isLoading }) => {
           </motion.button>
         </form>
 
-        <div className="auth-footer">
-          {activeTab === "login" ? (
-            <p>Don't have an account? <button 
-              onClick={() => setActiveTab("register")}
-              disabled={isLoading}
-            >Sign up</button></p>
-          ) : (
-            <p>Already have an account? <button 
-              onClick={() => setActiveTab("login")}
-              disabled={isLoading}
-            >Sign in</button></p>
-          )}
-        </div>
+        
       </div>
     </motion.div>
   );
