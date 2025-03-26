@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ThreadItem from './ThreadItem';
+import { likeThread, addReply, likeReply } from '../../services/threadService';
 
 const ThreadList = ({ 
   threads = [],
@@ -44,11 +45,14 @@ const ThreadList = ({
         t.id === threadId ? normalizeThread({ ...t, likes: newLikes }) : t
       ));
 
+      await likeThread(threadId, user.uid);
+
       showNotification(
         newLikes.length > currentLikes.length ? "Post liked!" : "Post unliked",
         "success"
       );
     } catch (error) {
+      console.error("Like error:", error);
       showNotification("Like update failed", "error");
       setOptimisticUpdates(prev => ({ ...prev, [threadId]: undefined }));
     } finally {
@@ -84,7 +88,10 @@ const ThreadList = ({
         t.id === threadId ? { ...t, replies: updatedReplies } : t
       ));
 
+      await likeReply(threadId, updatedReplies.findIndex(r => r.id === replyId), user.uid);
+
     } catch (error) {
+      console.error("Reply like error:", error);
       showNotification("Reply like update failed", "error");
       setOptimisticUpdates(prev => ({ ...prev, [threadId]: undefined }));
     } finally {
@@ -120,8 +127,17 @@ const ThreadList = ({
           : t
       ));
 
+      const replyData = {
+        text: replyText,
+        user: user.displayName || user.email,
+        userId: user.uid,
+        likes: []
+      };
+      await addReply(threadId, replyData);
+
       showNotification("Reply posted!", "success");
     } catch (error) {
+      console.error("Reply error:", error);
       showNotification("Failed to post reply", "error");
       setOptimisticUpdates(prev => ({
         ...prev,

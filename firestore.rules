@@ -11,6 +11,14 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
+    function isUpdatingLikesOrReplies() {
+      return isAuthenticated() && (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes']) ||
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['replies']) ||
+        request.resource.data.diff(resource.data).affectedKeys().hasAll(['likes', 'replies'])
+      );
+    }
+
     // Users collection
     match /users/{userId} {
       allow read: if isAuthenticated();
@@ -22,6 +30,9 @@ service cloud.firestore {
       allow read: if isAuthenticated();
       allow create: if isAuthenticated();
       allow update: if isAuthenticated() && (
+        // Allow any authenticated user to update likes and replies
+        isUpdatingLikesOrReplies() ||
+        // Allow thread owner or community moderators to update other fields
         resource.data.userId == request.auth.uid ||
         (resource.data.communityId != null && 
          get(/databases/$(database)/documents/communities/$(resource.data.communityId)).data.moderators.hasAny([request.auth.uid]))

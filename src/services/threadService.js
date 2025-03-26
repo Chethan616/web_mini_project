@@ -144,8 +144,10 @@ export const addReply = async (threadId, replyData) => {
     }
 
     const threadData = threadDoc.data();
+    const replyId = `reply_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const normalizedReply = {
       ...replyData,
+      id: replyId,
       createdAt: new Date().toISOString(),
       likes: []
     };
@@ -166,7 +168,7 @@ export const addReply = async (threadId, replyData) => {
         message: `${replyData.user} replied to your thread`,
         data: {
           threadId,
-          replyId: normalizedReply.id,
+          replyId: replyId,
           replyText: replyData.text
         }
       });
