@@ -1,20 +1,14 @@
 /* Auth Container */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 120px);
-    padding: 2rem;
-    background-color: #f8f9fa;
-  }
+
   
   /* Auth Card */
   .auth-card {
-    background: white;
     border-radius: 16px;
+    color: blue;
+    font-family: Lucida Handwriting;
     width: 100%;
     max-width: 440px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(14, 2, 2, 0.08);
     overflow: hidden;
     padding: 2.5rem;
   }

@@ -56,24 +56,16 @@ const LoginForm = ({ setIsLoading, showNotification, isLoading }) => {
     >
       <div className="auth-card">
         <div className="auth-header">
-          <h2>QwiX</h2>
+          <h1>QwiX</h1>
           <p>Connect with people worldwide</p>
         </div>
 
         <div className="auth-tabs">
           <button
-            className={`tab-btn ${activeTab === "login" ? "active" : ""}`}
-            onClick={() => setActiveTab("login")}
+            className={`tab-btn ${activeTab === "login" ? "active" : "active"}`}
             disabled={isLoading}
           >
-            Sign In
-          </button>
-          <button
-            className={`tab-btn ${activeTab === "register" ? "active" : ""}`}
-            onClick={() => setActiveTab("register")}
-            disabled={isLoading}
-          >
-            Create Account
+            {activeTab === "login" ? "Sign In" : "Create Account"}
           </button>
         </div>
 
@@ -110,7 +102,7 @@ const LoginForm = ({ setIsLoading, showNotification, isLoading }) => {
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder="password"
               required
               minLength={6}
               disabled={isLoading}

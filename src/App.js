@@ -473,7 +473,7 @@ function App() {
 
       <footer className="app-footer">
         <div className="footer-content">
-          <p> Made by ChethanKrishna & GopiAditya</p>
+          <p> Made by ChethanKrishna & GopiAdithya</p>
           <div className="footer-links">
             <a href="https://www.linkedin.com/in/gopi-adithya-syagamreddy-83361528a?originalSubdomain=in">LinkedIn</a>
             <a href="https://github.com/Chethan616">GitHub</a>

@@ -32,7 +32,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f5f7fb;
+  background-image: url(https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D)
 }
 
 /* Loading State */
@@ -41,13 +41,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f9fa;
+  background-color: #cce3de;
 }
 
 .loading-spinner {
   width: 3rem;
   height: 3rem;
-  border: 3px solid #e2e8f0;
+  border: 3px solid #185db8;
   border-top-color: var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -94,8 +94,8 @@ body {
 
 /* Header Styles */
 .app-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #2d3142;
+  box-shadow: 0 2px 4px rgba(11, 3, 3, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -103,10 +103,9 @@ body {
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  width: 100%;
   display: flex;
+  padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -128,12 +127,14 @@ body {
 .logo-icon {
   font-size: 1.5rem;
   color: #4361ee;
+  align-items:center;
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #0542a4;
+  font-family: 'Lucida Handwriting';
   margin: 0;
 }
 
@@ -149,7 +150,7 @@ body {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
-  color: #64748b;
+  color: #a3cef1;
   transition: color 0.2s;
 }
 
@@ -162,7 +163,6 @@ body {
   top: 0;
   right: 0;
   background-color: #ef4444;
-  color: white;
   font-size: 0.75rem;
   padding: 0.125rem 0.375rem;
   border-radius: 9999px;
@@ -174,13 +174,13 @@ body {
   gap: 0.75rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #f8f9fa;
+  background-color: #2d3142;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .user-dropdown:hover {
-  background-color: #e2e8f0;
+  background-color: #a8c7f0;
 }
 
 .user-avatar {
@@ -196,13 +196,13 @@ body {
 
 .user-name {
   font-size: 0.875rem;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .signout-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #ffffff;
   cursor: pointer;
   padding: 0.25rem;
   transition: color 0.2s;
@@ -215,7 +215,7 @@ body {
 /* Main Layout */
 .app-main {
   flex: 1;
-  max-width: 1200px;
+  max-width: 12000px;
   margin: 0 auto;
   padding: 2rem 1rem;
   width: 100%;
@@ -240,14 +240,14 @@ body {
 
 .sidebar-content {
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: #2d3142;
   box-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
 }
 
 .sidebar-section {
   margin-bottom: 2rem;
-  background-color: #ffffff;
+  background-color: #2d3142;
   
 }
 
@@ -258,7 +258,7 @@ body {
 .sidebar-title {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 12px;
@@ -277,7 +277,7 @@ body {
   gap: 12px;
   padding: 12px;
   border-radius: 8px;
-  color: var(--text-primary);
+  color:#ffffff;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -296,6 +296,7 @@ body {
 
 .menu-icon {
   font-size: 1.25rem;
+  
 }
 
 .community-list {
@@ -307,14 +308,14 @@ body {
 .community-item {
   padding: 0.75rem;
   border-radius: 0.5rem;
-  color: #64748b;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .community-item:hover {
   background-color: var(--surface-hover);
-  color: var(--primary);
+  color:blue;
 }
 
 .sidebar-communities {
@@ -343,6 +344,7 @@ body {
 .community-item-content {
   display: flex;
   align-items: center;
+  color: #ffffff;
   gap: 0.75rem;
 }
 
@@ -359,31 +361,15 @@ body {
 
 .community-name {
   font-size: 0.875rem;
-  color: #1e293b;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .community-stats {
   font-size: 0.75rem;
-  color: #64748b;
+  color: #ffffff;
 }
 
-.show-more-btn {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  background-color: var(--surface-hover);
-  border: none;
-  border-radius: 0.375rem;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.show-more-btn:hover {
-  background-color: var(--border-color);
-}
 
 /* Right Sidebar Styles */
 .forum-rightbar {
@@ -450,8 +436,8 @@ body {
 
 /* Forum Content */
 .forum-content {
-  background-color: var(--surface);
-  border-radius: 0.5rem;
+  background-color:#2d3142;
+  border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   border: 1px solid var(--border-color);
@@ -726,15 +712,16 @@ body {
 
 /* Footer Styles */
 .app-footer {
-  background-color: var(--surface);
+  color: #ffffff;
+  background-color:#2d3142;
   border-top: 1px solid var(--border-color);
   padding: 1.5rem 0;
   margin-top: auto;
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: 0cm;
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
@@ -1080,6 +1067,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
